@@ -1,0 +1,23 @@
+<mat-nav-list>
+  <mat-chip-list *ngIf="isAll">
+    &nbsp;<mat-chip color="accent" selected (click)="openModalMenuManage()"><i class="fa fa-cog"></i>&nbsp;&nbsp;Menu</mat-chip>
+  </mat-chip-list>
+
+  <div *ngFor="let menu of menus">
+    <div *ngIf="menu.webpage_group_id!==3">
+      <div class="item-menu-group" mat-menu-item [matMenuTriggerFor]="subGroup" id="{{menu.webpage_group_code}}">
+        <span class="flex-left">{{menu.webpage_group_name}}</span>&nbsp;<i class="fa fa-angle-down"></i>
+      </div>
+      <mat-menu #subGroup="matMenu">
+        <div mat-menu-item *ngFor="let menu of menu.menu" routerLink="/see-kpi/{{ menu.webpage_url }}">
+          {{ menu.webpage_name }}
+        </div>
+      </mat-menu>
+    </div>
+    <div *ngIf="menu.webpage_group_id===3">
+      <a mat-menu-item *ngFor="let menu of menu.menu" routerLink="/see-kpi/{{ menu.webpage_url }}">
+        {{ menu.webpage_name }}
+      </a>
+    </div>
+  </div>
+</mat-nav-list>

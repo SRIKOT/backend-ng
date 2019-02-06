@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-4">
+    <mat-form-field>
+      <mat-select placeholder="Select Organization">
+        <mat-option *ngFor="let org of orgs | async" value="{{ org.org_id }}">{{ org.org_name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="col-md-4">
+    <mat-form-field>
+      <mat-select placeholder="Select Level">
+        <mat-option *ngFor="let level of levels | async" value="{{ level.level_id }}">{{ level.appraisal_level_name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="col-md-4">
+    <mat-form-field>
+      <input type="text" placeholder="Auto Employee" aria-label="Number" matInput [formControl]="myControl"
+        [matAutocomplete]="autoEmp" (keyup)=autoEmployee($event)>
+      <mat-autocomplete #autoEmp="matAutocomplete">
+        <mat-option *ngFor="let employee of employees | async" [value]="employee.emp_name">
+          {{employee.emp_code}} {{employee.emp_name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-md-12 button-action">
+    <button mat-raised-button><i class="fa fa-search"></i>&nbsp;&nbsp;Search</button>
+  </div>
+</div>
