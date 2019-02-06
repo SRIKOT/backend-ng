@@ -113,7 +113,6 @@ class MenuController extends Controller {
                 $m->save();
             }
         }
-
         return response()->json(['status' => 200]);
     }
 

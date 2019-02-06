@@ -24,8 +24,7 @@ use Adldap\Exceptions\Auth\BindException;
 class AuthenticateController extends Controller
 {
 
-	public function __construct()
-	{
+	public function __construct() {
 		$this->middleware('jwt.auth', ['only' => ['index']]);
 	}
 
@@ -33,10 +32,7 @@ class AuthenticateController extends Controller
 		
 	}
 
-    public function authenticate(Request $request)
-    {
-		//return response()->json($request->all());
-
+    public function authenticate(Request $request) {
         try {
             // verify the credentials and create a token for the user
             if (! $token = JWTAuth::attempt(array('emp_code' => $request->email, 'password' => $request->password))) {
@@ -56,8 +52,7 @@ class AuthenticateController extends Controller
         return response()->json(['token' => $token]);
     }
 	
-	public function destroy()
-	{
+	public function destroy() {
 		$token = JWTAuth::getToken();
 		if (empty($token)) {
 			return response()->json(['status' => 401,'message' => 'no token provided']);
@@ -68,7 +63,6 @@ class AuthenticateController extends Controller
 			} catch (JWTException $e) {
 				return response()->json(['status' => 401, 'message' => $e->getMessage()], $e->getStatusCode());
 			}
-			
 		}
 	}
 }
