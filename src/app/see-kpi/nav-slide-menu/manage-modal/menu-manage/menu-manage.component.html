@@ -1,0 +1,18 @@
+<div class="row wrapper" dragula="COLUMNS" [(dragulaModel)]="inputDataMenu">
+  <div class="col-md-4 gu-group" *ngFor="let group of inputDataMenu">
+    <mat-card>
+      <span class="group-handle">{{group.page_group_name}}</span>
+      &nbsp;
+      <i matTooltip="Add Menu" matTooltipPosition="right" class="fa fa-plus pointer" aria-hidden="true" (click)="openAddMenuDialog(group)"></i>
+      <div class="gu-menu-list" dragula="ITEMS" [(dragulaModel)]="group.menu">
+        <div class="gu-menu" *ngFor="let menu of group.menu">
+          <span [innerHtml]="menu.page_name"></span>
+          &nbsp;
+          <span matTooltip="Edit Menu" matTooltipPosition="right" class="fa fa-edit" (click)="openEditMenuDialog(menu,group)"></span>
+          &nbsp;
+          <span matTooltip="Delete Menu" matTooltipPosition="right" class="fa fa-trash" (click)="delMenu(menu.page_id,menu.page_name)"></span>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

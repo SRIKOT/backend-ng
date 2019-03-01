@@ -6,11 +6,12 @@ import { Injectable } from '@angular/core';
 export class FunctionSetting {
   API: string = 'http://localhost/master-ng/api/public/';
 
-  modalSetting(disableClose: boolean, width?: string, data?: object) {
+  modalSetting(disableClose: boolean, width: string, data: object, focus: boolean) {
     return {
       disableClose: disableClose,
       width: width,
-      data: data
+      data: data,
+      autoFocus: focus
     }
   }
 }

@@ -19,8 +19,4 @@ export class NavSlideMenuService {
   getMenu() {
     return this.http.get(this.functionSetting.API + 'menu/getMenu');
   }
-
-  sortMenu(data: Array<any>): Observable<any> {
-    return this.http.patch(this.functionSetting.API + 'menu/sortMenu', data);
-  }
 }

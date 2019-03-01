@@ -22,6 +22,6 @@ export class NavBarLoginComponent implements OnInit {
   }
 
   openModalLogIn() {
-    this.logInModalRef = this.dialog.open(LoginModalComponent, this.functionSetting.modalSetting(false, "500px"));
+    this.logInModalRef = this.dialog.open(LoginModalComponent, this.functionSetting.modalSetting(false, "500px", {}, true));
   }
 }

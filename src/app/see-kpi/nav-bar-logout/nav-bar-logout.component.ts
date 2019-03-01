@@ -23,7 +23,7 @@ export class NavBarLogoutComponent implements OnInit {
   }
 
   openModalLogOut() {
-    this.logOutModalRef = this.dialog.open(LogoutModalComponent, this.functionSetting.modalSetting(false, "240px"));
+    this.logOutModalRef = this.dialog.open(LogoutModalComponent, this.functionSetting.modalSetting(false, "240px", {}, false));
     this.logOutModalRef.updatePosition({ top: '25px', right: '25px' });
 
     this.logOutModalRef.afterClosed().subscribe(res => {

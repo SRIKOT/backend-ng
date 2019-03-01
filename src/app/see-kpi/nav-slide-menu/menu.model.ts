@@ -1,15 +1,22 @@
 export interface Menu {
-    webpage_group_id: number;
-    webpage_group_code: string;
-    webpage_group_name: string;
+    page_group_id: number;
+    seq_no: Number;
+    page_group_code: string;
+    page_group_name: string;
+    is_active: number;
+    created_by: string;
+    created_dttm: string;
+    updated_by: string;
+    updated_dttm: string;
     menu: [MenuDetail];
 }
 
 export interface MenuDetail {
-    webpage_id: number,
-    webpage_group_id: number,
-    webpage_name: string;
-    webpage_url: string;
+    page_id: number;
+    seq_no: Number;
+    page_group_id: number;
+    page_name: string;
+    page_url: string;
     is_active: number;
     created_by: string;
     created_dttm: string;
