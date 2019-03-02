@@ -4,9 +4,9 @@ import { FormControl } from '@angular/forms';
 
 import { ImportEmployeeService } from './import-employee.service';
 
-import { Level } from '../_model/appraisal_level.model';
-import { Org } from '../_model/org.model';
-import { Employee } from '../_model/employee.model';
+// import { Level } from '../_model/appraisal_level.model';
+// import { Org } from '../_model/org.model';
+// import { Employee } from '../_model/employee.model';
 
 @Component({
   selector: 'app-import-employee',
@@ -14,9 +14,9 @@ import { Employee } from '../_model/employee.model';
   styleUrls: ['./import-employee.component.css']
 })
 export class ImportEmployeeComponent implements OnInit {
-  orgs: Observable<Org[]>;
-  levels: Observable<Level[]>;
-  employees: Observable<Employee[]>;
+  // orgs: Observable<Org[]>;
+  // levels: Observable<Level[]>;
+  // employees: Observable<Employee[]>;
 
   myControl = new FormControl();
 

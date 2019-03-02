@@ -2,10 +2,16 @@
 <div mat-dialog-content>
   <mat-tab-group dynamicHeight>
     <mat-tab label="Menu Group">
-      <app-menu-manage (dataMenu)="inputDataMenu($event)" [inputDataMenu]="dataMenu"></app-menu-manage>
+      <app-menu-group (dataMenu)="inputDataMenu($event)" [inputDataMenu]="dataMenu"></app-menu-group>
     </mat-tab>
-    <mat-tab label="Authorized Manage">
-      <app-menu-authorized></app-menu-authorized>
+    <mat-tab label="Role Manage">
+      <app-role-manage></app-role-manage>
+    </mat-tab>
+    <mat-tab label="Role Menu">
+      <app-role-menu></app-role-menu>
+    </mat-tab>
+    <mat-tab label="User Manage">
+      <app-user-manage></app-user-manage>
     </mat-tab>
   </mat-tab-group>
 </div>

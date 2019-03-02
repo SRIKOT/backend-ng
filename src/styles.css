@@ -5,6 +5,14 @@ mat-form-field {
   width: 100%;
 }
 
+.mat-raised-button,
+.mat-button,
+.mat-raised-button,
+.mat-stroked-button,
+.mat-flat-button {
+  outline: 0 !important;
+}
+
 table {
   width: 100%;
 }

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FunctionSetting {
-  API: string = 'http://localhost/master-ng/api/public/';
+  API = 'http://localhost/master-ng-api/public/';
 
   modalSetting(disableClose: boolean, width: string, data: object, focus: boolean) {
     return {
@@ -12,6 +12,6 @@ export class FunctionSetting {
       width: width,
       data: data,
       autoFocus: focus
-    }
+    };
   }
 }

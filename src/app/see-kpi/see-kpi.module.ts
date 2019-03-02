@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EffectsModule, Actions } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+
+import { roleReducer } from './nav-slide-menu/manage-modal/role-manage/state/role-manage.reducer';
+import { RoleEffect } from './nav-slide-menu/manage-modal/role-manage/state/role-manage.effects';
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -39,7 +45,7 @@ import {
   MatTreeModule,
 } from '@angular/material';
 import { PopoverModule } from 'ngx-bootstrap/popover';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { DragulaModule } from 'ng2-dragula';
 
 import { SeeKpiRoutingModule } from './see-kpi-routing.module';
@@ -50,28 +56,17 @@ import { NavSlideMenuComponent } from './nav-slide-menu/nav-slide-menu.component
 import { ImportEmployeeComponent } from './import-employee/import-employee.component';
 import { ImportOrganizationComponent } from './import-organization/import-organization.component';
 import { ManageModalComponent } from './nav-slide-menu/manage-modal/manage-modal.component';
-import { AddEditMenuDialog } from './nav-slide-menu/manage-modal/menu-manage/menu-manage.component';
-import { DeleteMenuDialog } from './nav-slide-menu/manage-modal/menu-manage/menu-manage.component';
-import { MenuManageComponent } from './nav-slide-menu/manage-modal/menu-manage/menu-manage.component';
-import { MenuAuthorizedComponent } from './nav-slide-menu/manage-modal/menu-authorized/menu-authorized.component';
-import { AddEditAuthorizedDialog } from './nav-slide-menu/manage-modal/menu-authorized/menu-authorized.component';
-
-import { EffectsModule, Actions } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
-
-import { roleReducer } from './nav-slide-menu/manage-modal/menu-authorized/state/menu-authorized.reducer';
-import { RoleEffect } from './nav-slide-menu/manage-modal/menu-authorized/state/menu-authorized.effects';
-
-import { customerReducer } from './customers/state/customer.reducer';
-import { CustomerEffect } from './customers/state/customer.effects';
-
-import { CustomerComponent } from './customers/customer/customer.component';
-import { CustomerAddComponent } from './customers/customer-add/customer-add.component';
-import { CustomerEditComponent } from './customers/customer-edit/customer-edit.component';
-import { CustomerListComponent } from './customers/customer-list/customer-list.component';
+import { AddEditMenuDialog } from './nav-slide-menu/manage-modal/menu-group/menu-group.component';
+import { DeleteMenuDialog } from './nav-slide-menu/manage-modal/menu-group/menu-group.component';
+import { MenuGroupComponent } from './nav-slide-menu/manage-modal/menu-group/menu-group.component';
+import { RoleManageComponent } from './nav-slide-menu/manage-modal/role-manage/role-manage.component';
+import { DeleteRoleDialog } from './nav-slide-menu/manage-modal/role-manage/role-manage.component';
+import { RoleMenuComponent } from './nav-slide-menu/manage-modal/role-menu/role-menu.component';
+import { UserManageComponent } from './nav-slide-menu/manage-modal/user-manage/user-manage.component';
 
 @NgModule({
   imports: [
+    FlexLayoutModule,
     CommonModule,
     SeeKpiRoutingModule,
     FormsModule,
@@ -121,7 +116,7 @@ import { CustomerListComponent } from './customers/customer-list/customer-list.c
     ManageModalComponent,
     AddEditMenuDialog,
     DeleteMenuDialog,
-    AddEditAuthorizedDialog
+    DeleteRoleDialog
   ],
   declarations: [
     SeeKPIComponent,
@@ -133,13 +128,11 @@ import { CustomerListComponent } from './customers/customer-list/customer-list.c
     ManageModalComponent,
     AddEditMenuDialog,
     DeleteMenuDialog,
-    MenuManageComponent,
-    MenuAuthorizedComponent,
-    AddEditAuthorizedDialog,
-    CustomerComponent,
-    CustomerAddComponent,
-    CustomerEditComponent,
-    CustomerListComponent
+    MenuGroupComponent,
+    RoleManageComponent,
+    DeleteRoleDialog,
+    RoleMenuComponent,
+    UserManageComponent
   ]
 })
 export class SeeKpiModule { }

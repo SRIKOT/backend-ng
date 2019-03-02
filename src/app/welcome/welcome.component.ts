@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, OnDestroy, ViewChild } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 
 import { AuthService } from '../shared/auth.service';
 
@@ -30,7 +30,7 @@ export class WelcomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    console.log("ngOnDestroy");
+    console.log('ngOnDestroy');
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 }

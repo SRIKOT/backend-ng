@@ -1,0 +1,12 @@
+mat-form-field {
+  width: 50%;
+}
+
+.gu-group {
+  margin-top: 5px;
+  margin-bottom: 3px;
+}
+
+.mat-button.mat-small {
+  min-width: 1%;
+}
