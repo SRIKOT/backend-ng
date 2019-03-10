@@ -1,0 +1,20 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Role Name</th>
+        <th *ngFor="let menu of menus">
+          {{ menu.page_name }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of roles">
+        <td class="align-middle">{{ role.role_name }}</td>
+        <td class="align-middle" *ngFor="let menu of role.menu">
+          <mat-checkbox [checked]="menu.selected" [(ngModel)]="menu.selected" (change)="manageMenu(role)"></mat-checkbox>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
